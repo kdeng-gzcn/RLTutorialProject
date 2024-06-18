@@ -23,7 +23,7 @@ env.reset()
 
 model = PPO("MlpPolicy", env, verbose=1, device='cuda', tensorboard_log=log_dir) # try cuda
 
-Timesteps = 10000
+Timesteps = 100000
 for i in range(1, 11):
     model.learn(total_timesteps=Timesteps, reset_num_timesteps=False, tb_log_name="PPO") # log in logs/times/A2C
     model.save(f"{models_dir}/{Timesteps * i}") # save model in models/times/10000.zip
